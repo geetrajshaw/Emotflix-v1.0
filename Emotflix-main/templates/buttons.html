@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+    <link rel="stylesheet" href="/static/button_style.css">
+</head>
+<style>
+    .container {
+        display: flex;
+    }
+
+    .container span {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        margin: 5px;
+        font-family:Bio-Rhyme;
+        color: bisque
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .container span:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .container span:nth-child(2) {
+        animation-delay: 1s;
+        /* Adjust delay as needed */
+    }
+
+    .container span:nth-child(3) {
+        animation-delay: 2s;
+        /* Adjust delay as needed */
+    }
+</style>
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="./static/img2.jpg" alt="">
+                <span>EmotFLIX</span>
+            </div>
+            <ul>
+                <li><a href="#">HOME</a></li>
+               
+                <li><a href="http://127.0.0.1:5500/contact.html">CONTACT</a></li>
+                <li><a href="http://127.0.0.1:5500/Join%20Our%20Team/join_page.html">TEAM-INFO</a></li>
+                
+            </ul>
+        </nav>
+
+        <div class="content">
+            <!-- <h1 class="slide-left">Our <br> Website</h1>
+            <p class="slide-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <div class="links slide-left"> -->
+                <div class="output" >
+                    {% if final_output %}
+                    <h2 class="container"><span>You</span> <span>look </span> <span>{{final_output}}</span></h2>
+                    <h1 style="font-family:Bio-Rhyme; color: bisque;margin:40px;font:30px; font-size:50px">Time to Kick off the Celebration...!</h1>
+                    <h2 style="font-family:Bio-Rhyme; color: bisque;margin:40px;font:40px">What would you prefer</h2>
+                    {% endif %}
+                </div>
+                <a href="http://localhost:5000/movies" class="btn">MOVIES</a>
+                <a href="http://localhost:5000/songs" class="btn">SONGS</a>
+                <a href="http://localhost:5000/books"class="btn">BOOKS</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
